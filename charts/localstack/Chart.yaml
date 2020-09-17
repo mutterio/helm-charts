@@ -2,7 +2,7 @@ apiVersion: v1
 appVersion: "latest"
 description: A Helm chart for Localstack
 name: localstack
-version: 0.1.0
+version: 0.0.1
 sources:
 - https://localstack.cloud/
 - https://github.com/localstack/localstack
