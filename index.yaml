@@ -1,0 +1,20 @@
+apiVersion: v1
+entries:
+  localstack:
+  - apiVersion: v1
+    appVersion: latest
+    created: "2020-09-17T18:54:59.631692323Z"
+    description: A Helm chart for Localstack
+    digest: 4659eed9d520444cd1ecd3173e0ec9d86ea5047b76e8d50f5e0396aa02343b3a
+    icon: https://github.com/localstack/localstack/raw/master/localstack/dashboard/web/img/localstack.png
+    keywords:
+    - aws
+    - localstack
+    name: localstack
+    sources:
+    - https://localstack.cloud/
+    - https://github.com/localstack/localstack
+    urls:
+    - https://github.com/mutterio/helm-localstack/releases/download/localstack-0.0.1/localstack-0.0.1.tgz
+    version: 0.0.1
+generated: "2020-09-17T18:54:59.521227413Z"
