@@ -1,0 +1,75 @@
+localstack:
+  port: 4566
+  useSsl: "false"
+  defaultRegion: "us-east-1"
+  kinesisErrorProbability: "0.0"
+  dynamodbErrorProbability: "0.0"
+  lambdaExecutor: "local"
+  services:
+    - s3
+replicaCount: 1
+
+image:
+  repository: localstack/localstack
+  tag: latest
+  pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: LoadBalancer
+  port: 4566
+  nodePort: 31000
+
+ingress:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  paths: []
+  hosts:
+    - chart-example.local
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #  cpu: 100m
+  #  memory: 128Mi
+  # requests:
+  #  cpu: 100m
+  #  memory: 128Mi
+
+## Persist data to a persitent volume
+persistence:
+  enabled: true
+  ## Name of existing persistent volume to attach
+  # existingClaim: ""
+
+  ##  Persistent Volume Storage Class
+  ## If defined, storageClassName: <storageClass>
+  ## If set to "-", storageClassName: "", which disables dynamic provisioning
+  ## If undefined (the default) or set to null, no storageClassName spec is
+  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+  ##   GKE, AWS & OpenStack)
+  ##
+  # storageClass: "-"
+
+  ## Persistent Volume Access Mode.
+  accessMode: ReadWriteOnce
+
+  ## Persistent Volume Storage Size.
+  size: 8Gi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
