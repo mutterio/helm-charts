@@ -1,3 +1,5 @@
+![publish-chart](https://github.com/mutterio/helm-charts/workflows/publish-chart/badge.svg)
+
 # mutter.io helm-charts
 
 index can be found [here](https://mutterio.github.io/helm-charts/index.yaml)
